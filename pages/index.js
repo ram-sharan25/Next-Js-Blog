@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css';
-
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Link from 'next/link'
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -11,7 +11,10 @@ export default function Home() {
 
       <main>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Learn <a href="https://nextjs.org">Next.js!</a>
+        </h1>
+        <h1 className={styles.title}>
+          Here is the  <Link href="/posts/first-posts">First Post</Link>
         </h1>
 
         <p className={styles.description}>
@@ -55,7 +58,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
         </a>
       </footer>
@@ -86,6 +89,7 @@ export default function Home() {
           align-items: center;
           text-decoration: none;
           color: inherit;
+          font-weight: 1000;
         }
         code {
           background: #fafafa;
@@ -111,5 +115,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
