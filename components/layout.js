@@ -1,16 +1,16 @@
-import styles from "./layout.module.css";
 import Head from "next/head";
 import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
+import styles from "./layout.module.css";
 
 const name = "Ram Sharan Rimal";
 export const siteTitle = "Next.Js Sample WebSite";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
-      <Head>
+    <>
+      <Head className={styles.container}>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
@@ -57,13 +57,15 @@ export default function Layout({ children, home }) {
             </>
           )}
         </header>
-        <main>{children}</main>
+        <div className={styles.mainItems}>
+          <main>{children}</main>
+        </div>
         {!home && (
           <div className={styles.backToHome}>
-            <Link href="/"> Back to home </Link>
+            <Link href="/"> ⇐ Back to home </Link>
           </div>
         )}
       </Head>
-    </div>
+    </>
   );
 }
